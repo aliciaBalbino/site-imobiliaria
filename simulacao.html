@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulação | Adriana Balbino Imobiliária</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="navbar">
+            <a class="logo" href="index.html" aria-label="Adriana Balbino Imobiliária">
+                <img src="imagens/logo-adriana-balbino.svg.jpeg" alt="Adriana Balbino Imobiliária">
+            </a>
+
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="imoveis.html">Imóveis</a></li>
+                <li><a href="simulacao.html">Simulação</a></li>
+            </ul>
+
+            <a class="whatsapp-link" href="https://wa.me/5521998120374" target="_blank" rel="noopener">
+                Fale comigo
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <p class="eyebrow">Planejamento</p>
+            <h1>Simule seu interesse</h1>
+            <p>Envie uma mensagem com o perfil do imóvel desejado para receber orientação inicial.</p>
+        </section>
+
+        <section class="form-section">
+            <form class="lead-form" id="leadForm">
+                <label>
+                    Nome
+                    <input type="text" id="nome" placeholder="Seu nome" required>
+                </label>
+
+                <label>
+                    Tipo de imóvel
+                    <select id="tipo">
+                        <option>Apartamento</option>
+                        <option>Cobertura</option>
+                        <option>Terreno</option>
+                    </select>
+                </label>
+
+                <label>
+                    Região desejada
+                    <input type="text" id="regiao" placeholder="Ex: Barra da Tijuca">
+                </label>
+
+                <label>
+                    Faixa de investimento
+                    <select id="valor">
+                        <option>Até R$ 400 mil</option>
+                        <option>R$ 400 mil a R$ 700 mil</option>
+                        <option>R$ 700 mil a R$ 1 milhão</option>
+                        <option>Acima de R$ 1 milhão</option>
+                    </select>
+                </label>
+
+                <label>
+                    Observações
+                    <textarea id="observacoes" rows="4" placeholder="Conte rapidamente o que você procura"></textarea>
+                </label>
+
+                <button type="submit">Enviar pelo WhatsApp</button>
+            </form>
+
+            <aside class="form-aside">
+                <p class="eyebrow">Como funciona</p>
+                <h2>Você manda o perfil, a Adriana ajuda no caminho.</h2>
+                <p>
+                    Esta simulação inicial organiza as informações principais para iniciar a conversa pelo WhatsApp.
+                </p>
+            </aside>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div>
+            <h2>Adriana Balbino Imobiliária</h2>
+            <p>Imóveis no Rio de Janeiro com atendimento humano, objetivo e transparente.</p>
+        </div>
+
+        <div>
+            <h3>Contato</h3>
+            <p>Rio de Janeiro - RJ</p>
+            <p>+55 (21) 99812-0374</p>
+            <p>adrianasb.social@gmail.com</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

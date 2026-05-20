@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imóveis | Adriana Balbino Imobiliária</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="navbar">
+            <a class="logo" href="index.html" aria-label="Adriana Balbino Imobiliária">
+                <img src="imagens/logo-adriana-balbino.svg.jpeg" alt="Adriana Balbino Imobiliária">
+            </a>
+
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="imoveis.html">Imóveis</a></li>
+                <li><a href="simulacao.html">Simulação</a></li>
+            </ul>
+
+            <a class="whatsapp-link" href="https://wa.me/5521998120374" target="_blank" rel="noopener">
+                Fale comigo
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <p class="eyebrow">Curadoria de imóveis</p>
+            <h1>Imóveis disponíveis</h1>
+            <p>Confira algumas opções iniciais para compra, moradia e investimento.</p>
+        </section>
+
+        <section class="section">
+            <div class="filter-bar">
+                <button class="filter-button active" data-filter="todos">Todos</button>
+                <button class="filter-button" data-filter="apartamento">Apartamentos</button>
+                <button class="filter-button" data-filter="casa">Casas</button>
+                <button class="filter-button" data-filter="lancamento">Lançamentos</button>
+            </div>
+
+            <div class="property-grid">
+                <article class="property-card" data-category="apartamento lancamento">
+                    <img src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=900&q=80" alt="Sala de apartamento moderno">
+                    <div class="property-body">
+                        <span class="tag">Lançamento</span>
+                        <h3>Residencial Adriana</h3>
+                        <p class="location">Barra da Tijuca</p>
+                        <p>2 quartos, varanda, lazer completo e vaga.</p>
+                        <strong>R$ 850.000</strong>
+                        <a class="card-button" href="https://wa.me/5521998120374?text=Tenho%20interesse%20no%20Residencial%20Adriana" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+                    </div>
+                </article>
+
+                <article class="property-card" data-category="casa">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="Casa contemporânea com fachada iluminada">
+                    <div class="property-body">
+                        <span class="tag">Pronto para morar</span>
+                        <h3>Casa Jardim Oceânico</h3>
+                        <p class="location">Barra da Tijuca</p>
+                        <p>3 quartos, suíte, área gourmet e quintal.</p>
+                        <strong>R$ 1.250.000</strong>
+                        <a class="card-button" href="https://wa.me/5521998120374?text=Tenho%20interesse%20na%20Casa%20Jardim%20Oce%C3%A2nico" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+                    </div>
+                </article>
+
+                <article class="property-card" data-category="apartamento">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80" alt="Cozinha integrada de apartamento decorado">
+                    <div class="property-body">
+                        <span class="tag">Oportunidade</span>
+                        <h3>Apartamento Vista Verde</h3>
+                        <p class="location">Jacarepaguá</p>
+                        <p>2 quartos, condomínio com piscina e segurança.</p>
+                        <strong>R$ 420.000</strong>
+                        <a class="card-button" href="https://wa.me/5521998120374?text=Tenho%20interesse%20no%20Apartamento%20Vista%20Verde" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+                    </div>
+                </article>
+
+                <article class="property-card" data-category="apartamento lancamento">
+                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80" alt="Varanda ampla de apartamento">
+                    <div class="property-body">
+                        <span class="tag">Lançamento</span>
+                        <h3>Life Recreio</h3>
+                        <p class="location">Recreio dos Bandeirantes</p>
+                        <p>3 quartos, varanda gourmet e lazer de clube.</p>
+                        <strong>R$ 690.000</strong>
+                        <a class="card-button" href="https://wa.me/5521998120374?text=Tenho%20interesse%20no%20Life%20Recreio" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div>
+            <h2>Adriana Balbino Imobiliária</h2>
+            <p>Imóveis no Rio de Janeiro com atendimento humano, objetivo e transparente.</p>
+        </div>
+
+        <div>
+            <h3>Contato</h3>
+            <p>Rio de Janeiro - RJ</p>
+            <p>+55 (21) 99812-0374</p>
+            <p>adrianasb.social@gmail.com</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
