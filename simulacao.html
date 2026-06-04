@@ -19,6 +19,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="imoveis.html">Imóveis</a></li>
                 <li><a href="simulacao.html">Simulação</a></li>
+                <li><a href="quemSomos.html">Quem Nós Somos</a></li>
             </ul>
 
             <a class="whatsapp-link" href="https://wa.me/5521998120374" target="_blank" rel="noopener">
@@ -29,7 +30,6 @@
 
     <main>
         <section class="page-hero">
-            <p class="eyebrow">Planejamento</p>
             <h1>Simule seu interesse</h1>
             <p>Envie uma mensagem com o perfil do imóvel desejado para receber orientação inicial.</p>
         </section>
@@ -46,15 +46,45 @@
                     <input type="text" id="regiao" placeholder="Ex: Barra da Tijuca">
                 </label>
 
-                <label>
-                    Faixa de investimento
-                    <select id="valor">
-                        <option>Até R$ 400 mil</option>
-                        <option>R$ 400 mil a R$ 700 mil</option>
-                        <option>R$ 700 mil a R$ 1 milhão</option>
-                        <option>Acima de R$ 1 milhão</option>
-                    </select>
-                </label>
+                <fieldset class="choice-group">
+                    <legend>Finalidade</legend>
+                    <label class="radio-option">
+                        <input type="radio" name="finalidade" value="Investimento" required>
+                        Investimento
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="finalidade" value="Moradia" required>
+                        Moradia
+                    </label>
+                </fieldset>
+
+                <fieldset class="choice-group">
+                    <legend>Momento da compra</legend>
+                    <label class="radio-option">
+                        <input type="radio" name="momento" value="Aquisição imediata" required>
+                        Aquisição imediata
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="momento" value="Planejamento" required>
+                        Planejamento
+                    </label>
+                </fieldset>
+
+                <fieldset class="choice-group">
+                    <legend>Renda familiar a partir de</legend>
+                    <label class="radio-option">
+                        <input type="radio" name="renda" value="De R$ 3 mil até R$ 5 mil" required>
+                        De R$ 3 mil até R$ 5 mil
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="renda" value="De R$ 5 mil a R$ 10 mil" required>
+                        De R$ 5 mil a R$ 10 mil
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="renda" value="Acima de R$ 10 mil" required>
+                        Acima de R$ 10 mil
+                    </label>
+                </fieldset>
 
                 <label>
                     Observações

@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+
+
 :root {
     --ink: #17202a;
     --muted: #64707d;
@@ -20,7 +24,9 @@ body {
     min-height: 100vh;
     background-color: #f7f8f6;
     color: var(--ink);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Instrument Serif", Georgia, serif;
+    font-size: 17px;
+    letter-spacing: 0.2px;
 }
 
 img {
@@ -70,7 +76,7 @@ a {
     gap: 28px;
     list-style: none;
     color: #31404f;
-    font-weight: 700;
+    font-weight: 400;
 }
 
 .menu a:hover {
@@ -123,6 +129,51 @@ a {
 .lead-form button:hover {
     background: var(--green-dark);
     transform: translateY(-1px);
+}
+
+.floating-whatsapp {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 60;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 68px;
+    height: 68px;
+    border: 4px solid #25d366;
+    border-radius: 50%;
+    background: #25d366;
+    color: white;
+    box-shadow: 0 0 0 18px rgba(37, 211, 102, 0.12), 0 14px 34px rgba(18, 98, 63, 0.28);
+    animation: whatsappPulse 0.5s ease-out infinite;
+}
+
+.floating-whatsapp svg {
+    width: 38px;
+    height: 38px;
+}
+
+.floating-whatsapp:hover {
+    background: #1ebe5d;
+    transform: translateY(-2px);
+}
+
+@keyframes whatsappPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55), 0 14px 34px rgba(18, 98, 63, 0.34);
+    }
+
+    70% {
+        transform: scale(1.08);
+        box-shadow: 0 0 0 36px rgba(37, 211, 102, 0), 0 18px 40px rgba(18, 98, 63, 0.38);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0), 0 14px 34px rgba(18, 98, 63, 0.34);
+    }
 }
 
 .hero {
@@ -194,13 +245,13 @@ a {
 
 .search-box {
     display: grid;
-    grid-template-columns: repeat(3, minmax(150px, 1fr)) 52px;
+    grid-template-columns: repeat(2, minmax(140px, 1fr)) 48px;
     align-items: end;
-    gap: 10px;
-   width: min(100%, 1120px);
+    gap: 8px;
+    width: min(100%, 760px);
     margin-left: max(0px, calc((100vw - 1180px) / 2));
     margin-right: max(0px, calc((100vw - 1180px) / 2));
-    padding: 14px;
+    padding: 10px;
     background: var(--surface);
     color: var(--ink);
     border-radius: 8px;
@@ -209,18 +260,18 @@ a {
 }
 
 .search-button {
-    width: 52px;
-    min-height: 46px;
+    width: 48px;
+    min-height: 42px;
     padding: 0;
 }
 
 .search-button svg {
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
 }
 
 .search-box-clean {
-    grid-template-columns: repeat(3, minmax(180px, 1fr)) 58px;
+    grid-template-columns: repeat(2, minmax(150px, 1fr)) 50px;
     gap: 0;
     overflow: hidden;
     padding: 0;
@@ -229,26 +280,26 @@ a {
 }
 
 .search-box-clean .search-field {
-    min-height: 56px;
+    min-height: 48px;
     justify-content: center;
-    padding: 0 28px;
+    padding: 0 20px;
     border-right: 1px solid var(--line);
 }
 
 .search-box-clean select {
-    min-height: 56px;
+    min-height: 48px;
     border: 0;
     background-color: transparent;
     color: #111827;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     padding: 0;
     outline: none;
 }
 
 .search-box-clean .search-button {
-    width: 58px;
-    min-height: 56px;
+    width: 50px;
+    min-height: 48px;
     background: white;
     color: #24313d;
     border-radius: 0;
@@ -288,6 +339,40 @@ textarea {
     resize: vertical;
 }
 
+.choice-group {
+    display: grid;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.choice-group legend {
+    margin-bottom: 2px;
+    color: #32404d;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 46px;
+    padding: 0 12px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: white;
+    color: #32404d;
+    font-weight: 600;
+}
+
+.radio-option input {
+    width: auto;
+    min-height: auto;
+    padding: 0;
+}
+
 .section {
     max-width: 1180px;
     margin: 0 auto;
@@ -300,6 +385,11 @@ textarea {
     justify-content: space-between;
     gap: 20px;
     margin-bottom: 28px;
+}
+
+.section-heading .eyebrow {
+    margin-bottom: 0;
+    font-size: 24px;
 }
 
 .section-heading h2,
@@ -342,17 +432,11 @@ textarea {
 }
 
 .tag {
-    width: fit-content;
-    padding: 7px 10px;
-    background: #e9f5ef;
-    color: var(--green-dark);
-    border-radius: 999px;
-    font-size: 12px;
-    font-weight: 900;
+    display: none;
 }
 
 .property-body h3 {
-    font-family: "Chapazza", Arial, Helvetica, sans-serif;
+    font-family: "Instrument Serif", Georgia, serif;
     font-size: 22px;
 }
 
@@ -376,12 +460,12 @@ textarea {
 }
 
 .info-button {
-    background: #0b68c4;
-    color: white;
+    background: #d9ecff;
+    color: #15527f;
 }
 
 .info-button:hover {
-    background: #074f98;
+    background: #c5e2fb;
 }
 
 .property-features {
@@ -644,6 +728,80 @@ textarea {
     max-width: 680px;
 }
 
+.about-hero {
+    padding-bottom: 44px;
+}
+
+.broker-profile {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+    gap: 36px;
+    max-width: 1180px;
+    margin: 0 auto 48px;
+    padding: 0 24px;
+    align-items: stretch;
+}
+
+.broker-profile-copy,
+.broker-profile-card,
+.values-section article {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    box-shadow: 0 16px 38px rgba(23, 32, 42, 0.08);
+}
+
+.broker-profile-copy {
+    padding: 36px;
+}
+
+.broker-profile-copy h2 {
+    margin-bottom: 18px;
+    font-size: clamp(30px, 4vw, 48px);
+    line-height: 1.05;
+}
+
+.broker-profile-copy p,
+.broker-profile-card p,
+.values-section p {
+    color: var(--muted);
+    font-size: 20px;
+    line-height: 1.65;
+}
+
+.broker-profile-copy p + p {
+    margin-top: 14px;
+}
+
+.broker-profile-card {
+    display: grid;
+    align-content: end;
+    gap: 16px;
+    padding: 32px;
+    background: #f2f8fd;
+}
+
+.broker-profile-card h3,
+.values-section h3 {
+    color: #15527f;
+    font-size: 28px;
+}
+
+.values-section {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 1180px;
+    margin: 0 auto 72px;
+    padding: 0 24px;
+}
+
+.values-section article {
+    display: grid;
+    gap: 12px;
+    padding: 28px;
+}
+
 .filter-bar {
     display: flex;
     gap: 10px;
@@ -687,10 +845,35 @@ textarea {
     gap: 16px;
 }
 
+.lead-form label,
+.lead-form .choice-group legend {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.lead-form input,
+.lead-form textarea,
+.lead-form .radio-option {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.lead-form input,
+.lead-form textarea {
+    color: #32404d;
+}
+
+.lead-form input::placeholder,
+.lead-form textarea::placeholder {
+    color: #8a96a3;
+    font-weight: 400;
+}
+
 .lead-form button {
     width: 100%;
     min-height: 50px;
-    font-size: 16px;
+    font-family: inherit;
+    font-size: 19px;
 }
 
 .footer {
@@ -742,6 +925,11 @@ textarea {
         grid-template-columns: 1fr;
     }
 
+    .broker-profile,
+    .values-section {
+        grid-template-columns: 1fr;
+    }
+
     .hero {
         min-height: auto;
         padding-top: 84px;
@@ -778,7 +966,9 @@ textarea {
     .about-section,
     .cta-section,
     .form-section,
-    .page-hero {
+    .page-hero,
+    .broker-profile,
+    .values-section {
         padding-left: 18px;
         padding-right: 18px;
     }
@@ -828,4 +1018,17 @@ textarea {
     .secondary-button {
         width: 100%;
     }
+
+    .floating-whatsapp {
+        right: 16px;
+        bottom: 16px;
+        width: 60px;
+        height: 60px;
+    }
+
+    .floating-whatsapp svg {
+        width: 34px;
+        height: 34px;
+    }
 }
+
