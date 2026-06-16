@@ -2174,6 +2174,81 @@ body.property-detail-page .property-location,
     line-height: 1.28;
 }
 
+.quem-somos-page {
+    color: #111827;
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    letter-spacing: 0;
+}
+
+.quem-somos-page .about-split-hero {
+    min-height: calc(100vh - 64px);
+    padding-top: clamp(68px, 8vw, 112px);
+    padding-bottom: clamp(54px, 7vw, 88px);
+}
+
+.quem-somos-page .about-split-copy {
+    max-width: 650px;
+}
+
+.quem-somos-page .about-split-copy .eyebrow {
+    margin-bottom: 20px;
+    color: #15527f;
+    font-size: clamp(18px, 2vw, 24px);
+    font-weight: 400;
+}
+
+.quem-somos-page .about-split-copy h1 {
+    margin-bottom: 26px;
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: clamp(42px, 6vw, 84px);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: 0;
+}
+
+.quem-somos-page .about-split-copy p {
+    max-width: 620px;
+    color: #26313d;
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: clamp(16px, 1.25vw, 19px);
+    line-height: 1.62;
+    letter-spacing: 0;
+}
+
+.quem-somos-page .about-split-copy p + p {
+    margin-top: 16px;
+}
+
+.quem-somos-page .about-split-hero img {
+    width: min(52vw, 760px);
+    height: min(52vw, 760px);
+    min-height: 500px;
+    object-position: center;
+}
+
+.quem-somos-page .values-section {
+    min-height: clamp(440px, 52vw, 620px);
+    padding-top: clamp(52px, 6vw, 90px);
+    padding-bottom: clamp(52px, 6vw, 90px);
+}
+
+.quem-somos-page .values-section::after {
+    background: rgba(15, 24, 32, 0.18);
+}
+
+.quem-somos-page .values-video-bg {
+    filter: none;
+    opacity: 1;
+}
+
+.quem-somos-page .values-result-card {
+    border-radius: 8px;
+}
+
+.quem-somos-page .values-section + .simulation-cta {
+    margin-bottom: 0;
+}
+
 .filter-bar {
     display: flex;
     gap: 10px;
@@ -2834,6 +2909,42 @@ body.property-detail-page .property-location,
     .floating-whatsapp svg {
         width: 34px;
         height: 34px;
+    }
+
+    .quem-somos-page .about-split-hero {
+        gap: 28px;
+        min-height: auto;
+        padding-top: 48px;
+    }
+
+    .quem-somos-page .about-split-copy .eyebrow {
+        font-size: 18px;
+    }
+
+    .quem-somos-page .about-split-copy h1 {
+        font-size: 36px;
+    }
+
+    .quem-somos-page .about-split-copy p {
+        font-size: 16px;
+    }
+
+    .quem-somos-page .about-split-hero img {
+        width: calc(100% + 18px);
+        height: auto;
+        min-height: 0;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+    }
+
+    .quem-somos-page .values-section {
+        min-height: auto;
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+
+    .quem-somos-page .values-result-card {
+        min-height: 156px;
     }
 }
 
