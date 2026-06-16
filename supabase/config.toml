@@ -1,0 +1,7 @@
+project_id = "fofjktyycvdcifnbkwhr"
+
+[functions.salvar-simulacao]
+verify_jwt = false
+
+[functions.registrar-clique-whatsapp]
+verify_jwt = false

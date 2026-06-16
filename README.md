@@ -1,106 +1,118 @@
-🌎**English &Portuguese**
+# Adriana Balbino Imobiliaria
 
-# Adriana Balbino Imobiliária 🏠
+Site estatico para apresentacao de imoveis, captacao de interesse e contato rapido pelo WhatsApp.
 
-Projeto de website imobiliário desenvolvido para apresentar imóveis, captar leads e oferecer atendimento digital personalizado.
+## Arquitetura
 
-O projeto foi inspirado em plataformas modernas do mercado imobiliário, com foco em:
-- experiência visual
-- responsividade
-- navegação intuitiva
-- contato rápido via WhatsApp
+Esta estrutura segue um modelo simples e comprovado para sites estaticos: paginas principais na raiz, paginas de detalhe agrupadas por dominio e arquivos de interface dentro de `assets`.
 
----
-
-## 🚀 Tecnologias utilizadas
-
-- HTML5
-- CSS3
-- JavaScript
-- Git & GitHub
-
----
-
-## 📱 Funcionalidades
-
-- Página inicial moderna
-- Hero section responsiva
-- Cards de imóveis em destaque
-- Simulação inicial de interesse
-- Integração com WhatsApp
-- Navegação entre páginas
-- Layout responsivo para mobile
-
----
-
-## 📂 Estrutura do projeto
-
-```bash
+```text
 site-imobiliaria/
-│
 ├── index.html
 ├── imoveis.html
 ├── simulacao.html
-│
-├── css/
-│   └── style.css
-│
-├── js/
-│   └── script.js
-│
-├── imagens/
+├── quemSomos.html
+├── empreendimentos/
+│   ├── orla-recreio-reserva.html
+│   └── outros-empreendimentos.html
+├── assets/
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   └── script.js
+│   ├── images/
+│   │   ├── logo-adriana-balbino-transparente.png
+│   │   └── pastas-dos-empreendimentos/
+│   └── videos/
+│       └── redemerChrist.mp4
+└── scripts/
+    ├── check-local-paths.cjs
+    └── reorganize-paths.cjs
 ```
 
+## Como navegar
 
+- `index.html`: pagina inicial.
+- `imoveis.html`: listagem dos imoveis.
+- `simulacao.html`: formulario de interesse.
+- `quemSomos.html`: pagina institucional.
+- `empreendimentos/`: paginas individuais dos empreendimentos.
 
-# Adriana Balbino Real Estate 🏠
+## Convencoes de caminhos
 
-Real estate website project developed to showcase properties, generate leads, and offer personalized digital customer service.
+Nas paginas principais, use:
 
-The project was inspired by modern real estate platforms, focusing on:
+```html
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/script.js"></script>
+<img src="assets/images/nome-da-imagem.png" alt="">
+```
 
-- visual experience  
-- responsive design  
-- intuitive navigation  
-- fast contact through WhatsApp  
+Nas paginas dentro de `empreendimentos/`, use:
 
----
+```html
+<link rel="stylesheet" href="../assets/css/style.css">
+<script src="../assets/js/script.js"></script>
+<img src="../assets/images/nome-da-imagem.png" alt="">
+```
 
-## 🚀 Technologies Used
+## Manutencao
 
-- HTML5  
-- CSS3  
-- JavaScript  
-- Git & GitHub  
-
----
-
-## 📱 Features
-
-- Modern homepage  
-- Responsive hero section  
-- Featured property cards  
-- Initial property interest simulation  
-- WhatsApp integration  
-- Navigation between pages  
-- Responsive layout for mobile devices  
-
----
-
-## 📂 Project Structure
+Se algum arquivo for movido novamente, rode:
 
 ```bash
-site-imobiliaria/
-│
-├── index.html
-├── imoveis.html
-├── simulacao.html
-│
-├── css/
-│   └── style.css
-│
-├── js/
-│   └── script.js
-│
-├── imagens/
+node scripts/reorganize-paths.cjs
 ```
+
+Esse script ajusta os caminhos de CSS, JavaScript, imagens, videos e links dos empreendimentos.
+
+Para conferir se nenhum caminho local quebrou:
+
+```bash
+node scripts/check-local-paths.cjs
+```
+
+## Variaveis de ambiente e Supabase
+
+O arquivo `.env` deve ficar apenas no computador local ou no painel da hospedagem. Ele ja esta ignorado pelo Git.
+
+Use `.env.example` apenas como modelo, sem chaves reais.
+
+```text
+.env              -> nao vai para o GitHub
+.env.example      -> pode ir para o GitHub, sem valores reais
+```
+
+Importante: em site 100% estatico, qualquer chave usada diretamente pelo navegador fica visivel para visitantes. Para esconder completamente as chaves do Supabase, use um backend, uma Edge Function do Supabase ou uma Serverless Function na hospedagem.
+
+Nunca coloque `SUPABASE_SERVICE_ROLE_KEY` no HTML, CSS ou JavaScript publico.
+
+## Supabase Edge Function
+
+O formulario de simulacao envia os dados para:
+
+```text
+https://fofjktyycvdcifnbkwhr.supabase.co/functions/v1/salvar-simulacao
+```
+
+Arquivos criados:
+
+```text
+supabase/config.toml
+supabase/functions/salvar-simulacao/index.ts
+supabase/sql/create-simulacoes.sql
+```
+
+Ordem recomendada:
+
+```bash
+# 1. Rode o SQL de supabase/sql/create-simulacoes.sql no SQL Editor do Supabase.
+
+# 2. Configure a chave secreta da Edge Function.
+supabase secrets set LEADS_SERVICE_KEY=sua_secret_api_key
+
+# 3. Publique a funcao.
+supabase functions deploy salvar-simulacao
+```
+
+A chave secreta fica somente no Supabase, nunca no frontend.
