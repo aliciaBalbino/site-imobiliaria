@@ -83,7 +83,8 @@ body {
     overflow: hidden;
 }
 
-.orla-recreio-reserva-page .property-detail-hero > img {
+.orla-recreio-reserva-page .property-detail-hero > img,
+.hero-property-carousel {
     position: absolute;
     inset: 0;
     z-index: 0;
@@ -93,6 +94,63 @@ body {
     object-fit: cover;
     object-position: center;
     box-shadow: none;
+}
+
+.hero-property-carousel {
+    overflow: hidden;
+}
+
+.hero-property-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.hero-property-track::-webkit-scrollbar {
+    display: none;
+}
+
+.hero-property-track img {
+    width: 100%;
+    height: 100%;
+    flex: 0 0 100%;
+    object-fit: cover;
+    object-position: center;
+    scroll-snap-align: start;
+}
+
+.hero-carousel-button {
+    position: absolute;
+    top: 50%;
+    z-index: 3;
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(255, 255, 255, 0.44);
+    border-radius: 50%;
+    background: rgba(17, 24, 39, 0.38);
+    color: white;
+    font-size: 34px;
+    line-height: 1;
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.hero-carousel-button:hover {
+    background: rgba(0, 102, 204, 0.78);
+    transform: translateY(-50%) scale(1.04);
+}
+
+.hero-carousel-button.prev {
+    left: clamp(18px, 3vw, 42px);
+}
+
+.hero-carousel-button.next {
+    right: clamp(18px, 3vw, 42px);
 }
 
 .orla-recreio-reserva-page .property-detail-hero::after {

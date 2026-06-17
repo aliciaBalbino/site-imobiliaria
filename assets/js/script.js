@@ -11,6 +11,35 @@ if (propertyDetailHero) {
     document.body.classList.add("property-detail-page");
 }
 
+document.querySelectorAll(".hero-property-carousel").forEach((carousel) => {
+    const track = carousel.querySelector(".hero-property-track");
+    const slides = Array.from(track?.querySelectorAll("img") || []);
+    const previousButton = carousel.querySelector(".hero-carousel-button.prev");
+    const nextButton = carousel.querySelector(".hero-carousel-button.next");
+    let currentIndex = 0;
+
+    if (!track || slides.length < 2) return;
+
+    const goToSlide = (index) => {
+        currentIndex = (index + slides.length) % slides.length;
+        track.scrollTo({
+            left: track.clientWidth * currentIndex,
+            behavior: "smooth"
+        });
+    };
+
+    previousButton?.addEventListener("click", () => goToSlide(currentIndex - 1));
+    nextButton?.addEventListener("click", () => goToSlide(currentIndex + 1));
+
+    window.addEventListener("resize", () => goToSlide(currentIndex));
+
+    setInterval(() => {
+        if (!document.hidden) {
+            goToSlide(currentIndex + 1);
+        }
+    }, 5200);
+});
+
 const getAmenityClass = (text) => {
     const normalized = text.toLowerCase();
 
