@@ -1509,7 +1509,7 @@ body.property-detail-page:not(.orla-recreio-reserva-page) .property-detail-copy 
     align-items: center;
     justify-content: center;
     border-radius: 4px;
-    background: #2f7cab;
+    background: #0066cc;
     color: white;
     font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     font-size: 23px;
@@ -1517,7 +1517,7 @@ body.property-detail-page:not(.orla-recreio-reserva-page) .property-detail-copy 
 }
 
 .overview-contact-card .contact-whatsapp-button:hover {
-    background: #3b8dbc;
+    background: #004c99;
     color: white;
 }
 
