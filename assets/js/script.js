@@ -7,38 +7,146 @@ const menu = document.querySelector(".menu");
 
 const propertyDetailHero = document.querySelector(".property-detail-hero");
 
+const propertyPageDetails = {
+    "americas-19.html": {
+        address: "Avenida das Américas, 19000, Recreio dos Bandeirantes. Rio de Janeiro - RJ",
+        coords: "-23.013846361933,-43.466591523501",
+        youtube: "7vag76u9pBM"
+    },
+    "arcos-do-porto.html": {
+        address: "Via Binário Porto, 778, Santo Cristo. Rio de Janeiro - RJ",
+        coords: "-22.8972192,-43.2047220",
+        videoSrc: "https://cury.net/storage/videos/products/gallery/phpaXwAJ5.mp4"
+    },
+    "caminhos-da-guanabara.html": {
+        address: "Acesso Público, 226, Centro. Niterói - RJ",
+        coords: "-22.889159,-43.125342",
+        videoSrc: "https://cury.net/storage/videos/products/gallery/phppsyQFM.mp4"
+    },
+    "ciata-residencial.html": {
+        address: "Via Binário Porto, 778, Santo Cristo. Rio de Janeiro - RJ",
+        coords: "-22.8972192,-43.2047220",
+        youtube: "uxQW3cJIfGg"
+    },
+    "farol-da-guanabara.html": {
+        address: "Via Binário Porto, 778, Santo Cristo. Rio de Janeiro - RJ",
+        coords: "-22.8972192,-43.2047220",
+        youtube: "7yxy0Lhshi4"
+    },
+    "luzes-do-rio-lamparina.html": {
+        address: "Via Binário do Porto, 778, Santo Cristo. Rio de Janeiro - RJ",
+        coords: "-22.89721,-43.20472",
+        youtube: "AkCKZ8Okibw"
+    },
+    "luzes-do-rio.html": {
+        address: "Via Binário do Porto, 778, Santo Cristo. Rio de Janeiro - RJ",
+        coords: "-22.8972192,-43.2047220",
+        youtube: "AkCKZ8Okibw"
+    },
+    "metropolitan-dream.html": {
+        address: "Avenida Almirante Júlio de Sá Bierrenbach, 600, Barra Olímpica. Rio de Janeiro - RJ",
+        coords: "-22.971899,-43.366272",
+        youtube: "Tqm1AOAxX7g"
+    },
+    "my-jacarepagua-mood.html": {
+        address: "Estrada Marechal Miguel Salazar Mendes de Moraes, Lote 3, Taquara. Rio de Janeiro - RJ",
+        coords: "-22.941022,-43.366740",
+        youtube: "O9En2bzUWQg"
+    },
+    "nova-norte-ginga.html": {
+        address: "Rua Hannibal Porto, 450, Irajá. Rio de Janeiro - RJ",
+        coords: "-22.8251991,-43.3253806",
+        youtube: "YDTEncYgszc"
+    },
+    "nova-norte-raizes.html": {
+        address: "Rua Hannibal Porto, 450, Irajá. Rio de Janeiro - RJ",
+        coords: "-22.8251991,-43.3253806",
+        youtube: "4qhS9zO-Er8"
+    },
+    "orla-central.html": {
+        address: "Acesso Público, 226, Centro. Niterói - RJ",
+        coords: "-22.889159,-43.125342",
+        youtube: "h-ImsYMtJcg"
+    },
+    "parque-piedade.html": {
+        address: "Rua Elias da Silva, 115, Piedade. Rio de Janeiro - RJ",
+        coords: "-22.8886238,-43.3127408"
+    },
+    "pixinguinha.html": {
+        address: "Via Binário do Porto, 778, Santo Cristo. Rio de Janeiro - RJ",
+        coords: "-22.8972192,-43.2047220",
+        youtube: "bJrqRxwy0NI"
+    },
+    "cartola.html": {
+        address: "Via Binário do Porto, 778, Santo Cristo. Rio de Janeiro - RJ",
+        coords: "-22.8972192,-43.2047220",
+        youtube: "-k0RL5IDYPA"
+    },
+    "residencial-cartola.html": {
+        address: "Via Binário Porto, 778, Santo Cristo. Rio de Janeiro - RJ",
+        coords: "-22.8972192,-43.2047220",
+        youtube: "8OhDUdRtwX0"
+    },
+    "residencial-nova-olaria.html": {
+        address: "Rua Luis Câmara, 688, Olaria. Rio de Janeiro - RJ",
+        coords: "-22.8439778,-43.2570838",
+        youtube: "z3jUvHu5Dzo"
+    },
+    "residencial-pixinguinha.html": {
+        address: "Via Binário Porto, 778, Santo Cristo. Rio de Janeiro - RJ",
+        coords: "-22.8972192,-43.2047220",
+        youtube: "ju5qxUvgewU"
+    },
+    "the-pier-residencial.html": {
+        address: "Acesso Público, 226, Centro. Niterói - RJ",
+        coords: "-22.889159,-43.125342",
+        youtube: "Px5oHSzfU5E"
+    },
+    "vargas-1140.html": {
+        address: "Avenida Presidente Vargas, 1140, Centro. Rio de Janeiro - RJ",
+        coords: "-22.903321,-43.186492",
+        youtube: "L1RbZZR1B68"
+    }
+};
+
 if (propertyDetailHero) {
     document.body.classList.add("property-detail-page");
 }
 
-document.querySelectorAll(".hero-property-carousel").forEach((carousel) => {
-    const track = carousel.querySelector(".hero-property-track");
-    const slides = Array.from(track?.querySelectorAll("img") || []);
-    const previousButton = carousel.querySelector(".hero-carousel-button.prev");
-    const nextButton = carousel.querySelector(".hero-carousel-button.next");
-    let currentIndex = 0;
+const initHeroPropertyCarousels = () => {
+    document.querySelectorAll(".hero-property-carousel").forEach((carousel) => {
+        if (carousel.dataset.carouselReady === "true") return;
 
-    if (!track || slides.length < 2) return;
+        const track = carousel.querySelector(".hero-property-track");
+        const slides = Array.from(track?.querySelectorAll("img") || []);
+        const previousButton = carousel.querySelector(".hero-carousel-button.prev");
+        const nextButton = carousel.querySelector(".hero-carousel-button.next");
+        let currentIndex = 0;
 
-    const goToSlide = (index) => {
-        currentIndex = (index + slides.length) % slides.length;
-        track.scrollTo({
-            left: track.clientWidth * currentIndex,
-            behavior: "smooth"
-        });
-    };
+        if (!track || slides.length < 2) return;
 
-    previousButton?.addEventListener("click", () => goToSlide(currentIndex - 1));
-    nextButton?.addEventListener("click", () => goToSlide(currentIndex + 1));
+        carousel.dataset.carouselReady = "true";
 
-    window.addEventListener("resize", () => goToSlide(currentIndex));
+        const goToSlide = (index) => {
+            currentIndex = (index + slides.length) % slides.length;
+            track.scrollTo({
+                left: track.clientWidth * currentIndex,
+                behavior: "smooth"
+            });
+        };
 
-    setInterval(() => {
-        if (!document.hidden) {
-            goToSlide(currentIndex + 1);
-        }
-    }, 5200);
-});
+        previousButton?.addEventListener("click", () => goToSlide(currentIndex - 1));
+        nextButton?.addEventListener("click", () => goToSlide(currentIndex + 1));
+
+        window.addEventListener("resize", () => goToSlide(currentIndex));
+
+        setInterval(() => {
+            if (!document.hidden) {
+                goToSlide(currentIndex + 1);
+            }
+        }, 5200);
+    });
+};
 
 const getAmenityClass = (text) => {
     const normalized = text.toLowerCase();
@@ -68,13 +176,97 @@ const getLocationFromDescription = (description) => {
     return "Rio de Janeiro - RJ";
 };
 
+const getPropertyVideoMarkup = (details) => {
+    if (details.youtube) {
+        return `
+            <div class="property-video-embed">
+                <iframe title="Apresentação do empreendimento" src="https://www.youtube.com/embed/${details.youtube}?rel=0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        `;
+    }
+
+    if (details.videoSrc) {
+        return `
+            <div class="property-video-embed">
+                <video src="${details.videoSrc}" controls playsinline preload="metadata"></video>
+            </div>
+        `;
+    }
+
+    return "";
+};
+
+const createHeroCarouselFromGallery = (hero) => {
+    if (!hero || hero.querySelector(".hero-property-carousel")) return;
+
+    const gallerySection = document.querySelector("#galeria");
+    const galleryImages = Array.from(gallerySection?.querySelectorAll(".gallery-grid img") || []);
+
+    if (!galleryImages.length) return;
+
+    const title = hero.querySelector("h1")?.textContent.trim() || "empreendimento";
+    const carousel = document.createElement("div");
+    carousel.className = "hero-property-carousel";
+    carousel.setAttribute("aria-label", `Fotos do ${title}`);
+
+    const track = document.createElement("div");
+    track.className = "hero-property-track";
+
+    galleryImages.forEach((image, index) => {
+        const slide = document.createElement("img");
+        slide.src = image.getAttribute("src") || image.dataset.src || "";
+        slide.alt = image.alt || `Foto ${index + 1} do ${title}`;
+        slide.decoding = "async";
+
+        if (index > 0) {
+            slide.loading = "lazy";
+        }
+
+        if (slide.src) {
+            track.appendChild(slide);
+        }
+    });
+
+    if (!track.children.length) return;
+
+    carousel.appendChild(track);
+
+    if (track.children.length > 1) {
+        const previousButton = document.createElement("button");
+        previousButton.className = "hero-carousel-button prev";
+        previousButton.type = "button";
+        previousButton.setAttribute("aria-label", "Foto anterior");
+        previousButton.textContent = "‹";
+
+        const nextButton = document.createElement("button");
+        nextButton.className = "hero-carousel-button next";
+        nextButton.type = "button";
+        nextButton.setAttribute("aria-label", "Próxima foto");
+        nextButton.textContent = "›";
+
+        carousel.append(previousButton, nextButton);
+    }
+
+    Array.from(hero.children)
+        .filter((child) => child.tagName === "IMG")
+        .forEach((image) => image.remove());
+
+    hero.appendChild(carousel);
+};
+
 if (propertyDetailHero && !document.querySelector(".property-section-nav")) {
     const descriptionElement = propertyDetailHero.querySelector(".property-detail-copy p");
     const description = descriptionElement?.textContent.trim() || "";
+    const propertyDetails = propertyPageDetails[currentPage] || {};
     const whatsappLink = propertyDetailHero.querySelector(".secondary-detail-button")?.href || "https://wa.me/5521998120374";
-    const locationText = getLocationFromDescription(description);
-    const locationQuery = encodeURIComponent(locationText);
+    const locationText = propertyDetails.address || getLocationFromDescription(description);
+    const locationQuery = encodeURIComponent(propertyDetails.coords || locationText);
+    const mapsHref = propertyDetails.coords
+        ? `https://www.google.com/maps?daddr=${propertyDetails.coords}`
+        : `https://www.google.com/maps/search/?api=1&query=${locationQuery}`;
+    const propertyVideoMarkup = getPropertyVideoMarkup(propertyDetails);
 
+    createHeroCarouselFromGallery(propertyDetailHero);
     descriptionElement?.remove();
     propertyDetailHero.querySelector(".detail-actions")?.remove();
 
@@ -83,7 +275,6 @@ if (propertyDetailHero && !document.querySelector(".property-section-nav")) {
     sectionNav.setAttribute("aria-label", "Navegação do empreendimento");
     sectionNav.innerHTML = `
         <a href="#sobre">Sobre o imóvel</a>
-        <a href="#galeria">Imagens</a>
         <a href="#diferenciais">Diferenciais</a>
         <a href="#localizacao">Localização</a>
     `;
@@ -98,13 +289,8 @@ if (propertyDetailHero && !document.querySelector(".property-section-nav")) {
                 <p>${description}</p>
                 <p>Fale com a Adriana para receber orientação personalizada, tirar dúvidas e simular as melhores condições para o seu perfil.</p>
             </div>
-            <aside class="overview-contact-card">
-                <span class="contact-status">Atendimento personalizado</span>
-                <div class="contact-features" aria-label="Destaques do empreendimento">
-                    <span>Piscina</span>
-                    <span>Espaço Fitness</span>
-                    <span>Espaço Pet</span>
-                </div>
+            <aside class="overview-contact-card has-property-video">
+                ${propertyVideoMarkup}
                 <a class="contact-whatsapp-button" href="${whatsappLink}" target="_blank" rel="noopener">Fale com a Adriana</a>
             </aside>
         </div>
@@ -116,7 +302,7 @@ if (propertyDetailHero && !document.querySelector(".property-section-nav")) {
     if (amenitiesSection) {
         const amenityTexts = Array.from(amenitiesSection.querySelectorAll(".amenities-grid article"))
             .map((item) => item.textContent.trim())
-            .filter((text) => text && !/^\d|m²|mÂ²|quarto|Studio|Zona|Centro|Região|Foco|Av\.|Rua|Perto da|Próximo|Fácil|Vista|Localização|Modernidade|Excelente|Apartamentos/i.test(text))
+            .filter((text) => text && !/^\d|m²|quarto|Studio|Zona|Centro|Região|Foco|Av\.|Rua|Perto da|Próximo|Fácil|Vista|Localização|Modernidade|Excelente|Apartamentos/i.test(text))
             .slice(0, 7);
 
         const items = (amenityTexts.length ? amenityTexts : Array.from(amenitiesSection.querySelectorAll(".amenities-grid article")).map((item) => item.textContent.trim()).slice(0, 7))
@@ -133,9 +319,10 @@ if (propertyDetailHero && !document.querySelector(".property-section-nav")) {
     }
 
     const gallerySection = document.querySelector("#galeria");
+    const locationInsertionTarget = amenitiesSection || gallerySection || overviewSection;
 
-    if (gallerySection && !document.querySelector("#localizacao")) {
-        gallerySection.insertAdjacentHTML("afterend", `
+    if (locationInsertionTarget && !document.querySelector("#localizacao")) {
+        locationInsertionTarget.insertAdjacentHTML("afterend", `
             <section class="detail-section property-location" id="localizacao">
                 <div class="location-content">
                     <div class="location-info">
@@ -151,7 +338,7 @@ if (propertyDetailHero && !document.querySelector(".property-section-nav")) {
                         </div>
                         <p class="location-directions-title">Veja como chegar</p>
                         <div class="location-actions">
-                            <a href="https://www.google.com/maps/search/?api=1&query=${locationQuery}" target="_blank" rel="noopener">
+                            <a href="${mapsHref}" target="_blank" rel="noopener">
                                 <i class="bi bi-geo-alt" aria-hidden="true"></i>
                                 Google Maps
                             </a>
@@ -159,13 +346,17 @@ if (propertyDetailHero && !document.querySelector(".property-section-nav")) {
                     </div>
                     <div class="location-map-card">
                         <iframe title="Mapa de ${locationText}" src="https://maps.google.com/maps?q=${locationQuery}&t=&z=14&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
-                        <a href="https://www.google.com/maps/search/?api=1&query=${locationQuery}" target="_blank" rel="noopener">Clique para exibir o mapa</a>
+                        <a href="${mapsHref}" target="_blank" rel="noopener">Clique para exibir o mapa</a>
                     </div>
                 </div>
             </section>
         `);
     }
+
+    gallerySection?.remove();
 }
+
+initHeroPropertyCarousels();
 
 if (navbar && menu) {
     const navToggle = document.createElement("button");
@@ -428,3 +619,4 @@ document.querySelectorAll(".whatsapp-link").forEach((link) => {
 floatingWhatsapp.addEventListener("click", () => {
     registerWhatsappClick("botao_flutuante_whatsapp");
 });
+

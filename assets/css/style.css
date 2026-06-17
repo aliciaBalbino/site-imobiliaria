@@ -1489,7 +1489,8 @@ body.property-detail-page:not(.orla-recreio-reserva-page) .property-detail-copy 
     box-shadow: 0 24px 54px rgba(23, 32, 42, 0.16);
 }
 
-.orla-recreio-reserva-page .overview-contact-card {
+.orla-recreio-reserva-page .overview-contact-card,
+.overview-contact-card.has-property-video {
     padding: 0;
     border: 0;
     background: transparent;
@@ -1505,12 +1506,17 @@ body.property-detail-page:not(.orla-recreio-reserva-page) .property-detail-copy 
     background: #101820;
 }
 
-.property-video-embed iframe {
+.property-video-embed iframe,
+.property-video-embed video {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     border: 0;
+}
+
+.property-video-embed video {
+    object-fit: cover;
 }
 
 .contact-status {
