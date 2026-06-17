@@ -35,7 +35,7 @@ site-imobiliaria/
 - `index.html`: pagina inicial.
 - `imoveis.html`: listagem dos imoveis.
 - `simulacao.html`: formulario de interesse.
-- `quemSomos.html`: pagina institucional.
+- `quemSomos.html`: pagina Sobre mim.
 - `empreendimentos/`: paginas individuais dos empreendimentos.
 
 ## Convencoes de caminhos
@@ -116,3 +116,4 @@ supabase functions deploy salvar-simulacao
 ```
 
 A chave secreta fica somente no Supabase, nunca no frontend.
+
