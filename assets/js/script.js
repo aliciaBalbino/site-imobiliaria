@@ -21,7 +21,7 @@ const propertyPageDetails = {
     "caminhos-da-guanabara.html": {
         address: "Acesso Público, 226, Centro. Niterói - RJ",
         coords: "-22.889159,-43.125342",
-        videoSrc: "https://cury.net/storage/videos/products/gallery/phppsyQFM.mp4"
+        youtube: "pNx8yYhzS0g"
     },
     "ciata-residencial.html": {
         address: "Via Binário Porto, 778, Santo Cristo. Rio de Janeiro - RJ",
@@ -31,12 +31,12 @@ const propertyPageDetails = {
     "farol-da-guanabara.html": {
         address: "Via Binário Porto, 778, Santo Cristo. Rio de Janeiro - RJ",
         coords: "-22.8972192,-43.2047220",
-        youtube: "7yxy0Lhshi4"
+        youtube: "pNx8yYhzS0g"
     },
     "luzes-do-rio-lamparina.html": {
         address: "Via Binário do Porto, 778, Santo Cristo. Rio de Janeiro - RJ",
         coords: "-22.89721,-43.20472",
-        youtube: "AkCKZ8Okibw"
+        youtube: "-YeSvvyD2mU"
     },
     "luzes-do-rio.html": {
         address: "Via Binário do Porto, 778, Santo Cristo. Rio de Janeiro - RJ",
@@ -265,6 +265,9 @@ if (propertyDetailHero && !document.querySelector(".property-section-nav")) {
         ? `https://www.google.com/maps?daddr=${propertyDetails.coords}`
         : `https://www.google.com/maps/search/?api=1&query=${locationQuery}`;
     const propertyVideoMarkup = getPropertyVideoMarkup(propertyDetails);
+    const contactCardClass = propertyVideoMarkup
+        ? "overview-contact-card has-property-video"
+        : "overview-contact-card compact-contact-card";
 
     createHeroCarouselFromGallery(propertyDetailHero);
     descriptionElement?.remove();
@@ -289,7 +292,7 @@ if (propertyDetailHero && !document.querySelector(".property-section-nav")) {
                 <p>${description}</p>
                 <p>Fale com a Adriana para receber orientação personalizada, tirar dúvidas e simular as melhores condições para o seu perfil.</p>
             </div>
-            <aside class="overview-contact-card has-property-video">
+            <aside class="${contactCardClass}">
                 ${propertyVideoMarkup}
                 <a class="contact-whatsapp-button" href="${whatsappLink}" target="_blank" rel="noopener">Fale com a Adriana</a>
             </aside>
@@ -619,4 +622,3 @@ document.querySelectorAll(".whatsapp-link").forEach((link) => {
 floatingWhatsapp.addEventListener("click", () => {
     registerWhatsappClick("botao_flutuante_whatsapp");
 });
-
