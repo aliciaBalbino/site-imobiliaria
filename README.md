@@ -10,6 +10,7 @@ Real estate platform developed for a real client, focused on property showcase, 
 * PostgreSQL
 * Supabase
 * Git & GitHub
+* Codex
 
 ## Main Features
 
