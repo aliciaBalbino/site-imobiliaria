@@ -2,7 +2,7 @@
 
 Real estate platform developed for a real client, focused on property showcase, lead generation and WhatsApp integration.
 
-assets/images/demoIndex.gif
+site-imobiliaria\assets\images
 
 ## Technologies
 
