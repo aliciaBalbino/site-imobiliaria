@@ -616,7 +616,15 @@ const registerWhatsappClick = (source) => {
 };
 
 document.querySelectorAll(".whatsapp-link").forEach((link) => {
-    link.addEventListener("click", () => registerWhatsappClick("navbar_fale_comigo"));
+    const source = window.location.pathname.includes("/empreendimentos/")
+        ? "empreendimento_navbar_fale_comigo"
+        : "navbar_fale_comigo";
+
+    link.addEventListener("click", () => registerWhatsappClick(source));
+});
+
+document.querySelectorAll(".contact-whatsapp-button").forEach((link) => {
+    link.addEventListener("click", () => registerWhatsappClick("empreendimento_fale_com_adriana"));
 });
 
 floatingWhatsapp.addEventListener("click", () => {

@@ -549,6 +549,31 @@ a {
     animation: whatsappPulse 1.4s ease-out infinite;
 }
 
+.floating-whatsapp::before {
+    content: "";
+    position: absolute;
+    right: -18px;
+    bottom: 78px;
+    width: 100px;
+    height: 90px;
+    background: url("../images/seta-whatsapp-adriana.png") center / contain no-repeat;
+    animation: whatsappArrowBounce 1.2s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes whatsappArrowBounce {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0.78;
+    }
+
+    50% {
+        transform: translateY(8px);
+        opacity: 1;
+    }
+}
+
+
 .floating-whatsapp svg {
     width: 38px;
     height: 38px;
