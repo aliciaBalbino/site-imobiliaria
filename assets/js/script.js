@@ -630,3 +630,16 @@ document.querySelectorAll(".contact-whatsapp-button").forEach((link) => {
 floatingWhatsapp.addEventListener("click", () => {
     registerWhatsappClick("botao_flutuante_whatsapp");
 });
+
+document.querySelectorAll(".hero-video-bg").forEach((video) => {
+    video.muted = true;
+    video.playsInline = true;
+
+    const playPromise = video.play();
+
+    if (playPromise !== undefined) {
+        playPromise.catch(() => {
+            // O navegador bloqueou o autoplay.
+        });
+    }
+});

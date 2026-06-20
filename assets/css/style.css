@@ -554,8 +554,8 @@ a {
     position: absolute;
     right: -18px;
     bottom: 78px;
-    width: 100px;
-    height: 90px;
+    width: 90px;
+    height: 100px;
     background: url("../images/seta-whatsapp-adriana.png") center / contain no-repeat;
     animation: whatsappArrowBounce 1.2s ease-in-out infinite;
     pointer-events: none;
