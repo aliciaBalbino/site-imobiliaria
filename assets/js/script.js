@@ -633,7 +633,11 @@ floatingWhatsapp.addEventListener("click", () => {
 
 document.querySelectorAll(".hero-video-bg").forEach((video) => {
     video.muted = true;
+    video.defaultMuted = true;
     video.playsInline = true;
+    video.setAttribute("muted", "");
+    video.setAttribute("playsinline", "");
+    video.setAttribute("webkit-playsinline", "");
 
     const playPromise = video.play();
 
