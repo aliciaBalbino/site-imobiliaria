@@ -1,5 +1,61 @@
 # Adriana Balbino Real Estate 🏠
 
+
+Este projeto foi desenvolvido como uma solução freelancer para uma corretora de imóveis. A plataforma permite que potenciais compradores pesquisem empreendimentos, enviem formulários de interesse e entrem em contato diretamente com a corretora através do WhatsApp.
+
+# 🇧🇷 Português
+
+Plataforma imobiliária desenvolvida para uma cliente real, com foco na apresentação de empreendimentos, captação de leads e integração com WhatsApp.
+
+![Demo](assets/images/demoIndex.gif)
+![Demo](assets/images/DemoIndex.gif)
+![Demo](assets/images/DemoSearch.gif)
+
+## Tecnologias
+
+* HTML5
+* CSS3
+* JavaScript
+* PostgreSQL
+* Supabase
+* Git & GitHub
+
+## Principais Funcionalidades
+
+* Catálogo de empreendimentos
+* Páginas individuais dos imóveis
+* Formulário de captação de leads
+* Integração com WhatsApp
+* Rastreamento de cliques
+* Layout responsivo
+* Proteção contra spam
+* Integração com banco de dados Supabase
+
+## Competências Aplicadas
+
+* Desenvolvimento Frontend
+* Integração com APIs
+* Modelagem de Banco de Dados
+* Design Responsivo
+* Sistemas de Captação de Leads
+* Segurança Web
+
+## Estrutura do Projeto
+
+```text
+site-imobiliaria/
+├── index.html
+├── imoveis.html
+├── simulacao.html
+├── quemSomos.html
+├── empreendimentos/
+├── assets/
+├── supabase/
+└── README.md
+```
+
+## Sobre o Projeto
+
 Real estate platform developed for a real client, focused on property showcase, lead generation and WhatsApp integration.
 
 ![Demo](assets/images/demoIndex.gif)
@@ -56,56 +112,6 @@ This project was developed as a freelance solution for a real estate professiona
 
 ---
 
-# 🇧🇷 Português
-
-Plataforma imobiliária desenvolvida para uma cliente real, com foco na apresentação de empreendimentos, captação de leads e integração com WhatsApp.
-
-## Tecnologias
-
-* HTML5
-* CSS3
-* JavaScript
-* PostgreSQL
-* Supabase
-* Git & GitHub
-
-## Principais Funcionalidades
-
-* Catálogo de empreendimentos
-* Páginas individuais dos imóveis
-* Formulário de captação de leads
-* Integração com WhatsApp
-* Rastreamento de cliques
-* Layout responsivo
-* Proteção contra spam
-* Integração com banco de dados Supabase
-
-## Competências Aplicadas
-
-* Desenvolvimento Frontend
-* Integração com APIs
-* Modelagem de Banco de Dados
-* Design Responsivo
-* Sistemas de Captação de Leads
-* Segurança Web
-
-## Estrutura do Projeto
-
-```text
-site-imobiliaria/
-├── index.html
-├── imoveis.html
-├── simulacao.html
-├── quemSomos.html
-├── empreendimentos/
-├── assets/
-├── supabase/
-└── README.md
-```
-
-## Sobre o Projeto
-
-Este projeto foi desenvolvido como uma solução freelancer para uma corretora de imóveis. A plataforma permite que potenciais compradores pesquisem empreendimentos, enviem formulários de interesse e entrem em contato diretamente com a corretora através do WhatsApp.
 
 ## Desenvolvido por
 
