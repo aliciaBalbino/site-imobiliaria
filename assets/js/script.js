@@ -8,44 +8,51 @@ const menu = document.querySelector(".menu");
 const propertyDetailHero = document.querySelector(".property-detail-hero");
 
 const propertyPageDetails = {
-    "americas-19.html": {
-        address: "Avenida das Américas, 19000, Recreio dos Bandeirantes. Rio de Janeiro - RJ",
-        coords: "-23.013846361933,-43.466591523501",
+   "americas-19.html": {
+        address: "Av. das Américas, 19040 - Recreio dos Bandeirantes, Rio de Janeiro - RJ, 22790-701",
+        coords: "-23.02021306909606,-43.493974916424044", 
         youtube: "7vag76u9pBM"
     },
+
+    "orla-recreio-reserva.html": {
+        address: "R. Escritor Rodrigo Melo Franco, 1020 - Barra da Tijuca, Rio de Janeiro - RJ, 22783-124",
+        coords: "-22.988433558194007, -43.41886467116488",
+        youtube: "8KHBMhFtDb8"
+    },
+
     "arcos-do-porto.html": {
-        address: "Via Binário Porto, 778, Santo Cristo. Rio de Janeiro - RJ",
-        coords: "-22.8972192,-43.2047220",
+        address: "Av. Cidade de Lima, 263 - Santo Cristo, Rio de Janeiro - RJ, 20220-710",
+        coords: "-22.89963467232977,-43.204999996014074",
         videoSrc: "https://cury.net/storage/videos/products/gallery/phpaXwAJ5.mp4"
     },
     "caminhos-da-guanabara.html": {
-        address: "Acesso Público, 226, Centro. Niterói - RJ",
-        coords: "-22.889159,-43.125342",
+        address: "R. Jorn. Rogério Coelho Neto, 103 - Centro, Niterói - RJ, 24020-010",
+        coords: "-22.886822974475194,-43.12643936466633",
         youtube: "pNx8yYhzS0g"
     },
     "ciata-residencial.html": {
-        address: "Via Binário Porto, 778, Santo Cristo. Rio de Janeiro - RJ",
-        coords: "-22.8972192,-43.2047220",
+        address: "Avenida Cidade de Lima, 340, Santo Cristo. Rio de Janeiro - RJ",
+        coords: "-22.899769500399522,-43.206699477427314",
         youtube: "uxQW3cJIfGg"
     },
     "farol-da-guanabara.html": {
-        address: "Via Binário Porto, 778, Santo Cristo. Rio de Janeiro - RJ",
-        coords: "-22.8972192,-43.2047220",
+        address: "Rua Cordeiro da Graça, 25, Santo Cristo. Rio de Janeiro - RJ",
+        coords: "-22.90018926757331,-43.20497703185534",
         youtube: "pNx8yYhzS0g"
     },
     "luzes-do-rio-lamparina.html": {
-        address: "Via Binário do Porto, 778, Santo Cristo. Rio de Janeiro - RJ",
-        coords: "-22.89721,-43.20472",
+        address: "R. São Cristóvão, 921 - Imperial de São Cristóvão",
+        coords: "-22.89988516182122,-43.21574031589325",
         youtube: "-YeSvvyD2mU"
     },
     "luzes-do-rio.html": {
-        address: "Via Binário do Porto, 778, Santo Cristo. Rio de Janeiro - RJ",
-        coords: "-22.8972192,-43.2047220",
+        address: "R. São Cristóvão - Imperial de São Cristóvão, Rio de Janeiro - RJ, 20940-001",
+        coords: "-22.899769278459548,-43.215512387302326",
         youtube: "AkCKZ8Okibw"
     },
     "metropolitan-dream.html": {
-        address: "Avenida Almirante Júlio de Sá Bierrenbach, 600, Barra Olímpica. Rio de Janeiro - RJ",
-        coords: "-22.971899,-43.366272",
+        address: "Avenida 6, 650, Barra Olímpica. Rio de Janeiro - RJ",
+        coords: "-22.967661965897392,-43.36697001426192",
         youtube: "Tqm1AOAxX7g"
     },
     "my-jacarepagua-mood.html": {
@@ -54,37 +61,37 @@ const propertyPageDetails = {
         youtube: "O9En2bzUWQg"
     },
     "nova-norte-ginga.html": {
-        address: "Rua Hannibal Porto, 450, Irajá. Rio de Janeiro - RJ",
-        coords: "-22.8251991,-43.3253806",
+        address: "R Hannibal Porto, 8 - Irajá, Rio de Janeiro - RJ, 21230-043",
+        coords: "-22.826247426588143,-43.3254304867312",
         youtube: "YDTEncYgszc"
     },
     "nova-norte-raizes.html": {
-        address: "Rua Hannibal Porto, 450, Irajá. Rio de Janeiro - RJ",
-        coords: "-22.8251991,-43.3253806",
+        address: "Rua Hannibal Porto, Lote 3, Irajá. Rio de Janeiro - RJ",
+        coords: "-22.82497499403652,-43.325451819018745",
         youtube: "4qhS9zO-Er8"
     },
     "orla-central.html": {
-        address: "Acesso Público, 226, Centro. Niterói - RJ",
-        coords: "-22.889159,-43.125342",
+        address: "R. Jorn. Rogério Coelho Neto, 86-168 - Centro - Centro, Niterói - RJ",
+        coords: "-22.887775413640163,-43.12706424707318",
         youtube: "h-ImsYMtJcg"
     },
     "parque-piedade.html": {
-        address: "Rua Elias da Silva, 115, Piedade. Rio de Janeiro - RJ",
-        coords: "-22.8886238,-43.3127408"
+        address: "Rua Gomes Serpa, Lote 1, Piedade. Rio de Janeiro - RJ",
+        coords: "-22.89153244915025,-43.31085248910474"
     },
     "pixinguinha.html": {
-        address: "Via Binário do Porto, 778, Santo Cristo. Rio de Janeiro - RJ",
-        coords: "-22.8972192,-43.2047220",
+        address: "R. Gen. Luís Mendes de Morais - Santo Cristo, Rio de Janeiro - RJ, 20220-260",
+        coords: "-22.902656498227984,-43.20773991112846",
         youtube: "bJrqRxwy0NI"
     },
     "cartola.html": {
-        address: "Via Binário do Porto, 778, Santo Cristo. Rio de Janeiro - RJ",
-        coords: "-22.8972192,-43.2047220",
+        address: "AV. Francisco Eugênio, 319, São Cristóvão. Rio de Janeiro - RJ",
+        coords: "-22.907493564587334,-43.218976583268685",
         youtube: "-k0RL5IDYPA"
     },
     "residencial-cartola.html": {
-        address: "Via Binário Porto, 778, Santo Cristo. Rio de Janeiro - RJ",
-        coords: "-22.8972192,-43.2047220",
+        address: "AV. Francisco Eugênio, 319, São Cristóvão. Rio de Janeiro - RJ",
+        coords: "-22.907488065773236,-43.218970862141205",
         youtube: "8OhDUdRtwX0"
     },
     "residencial-nova-olaria.html": {
@@ -93,20 +100,33 @@ const propertyPageDetails = {
         youtube: "z3jUvHu5Dzo"
     },
     "residencial-pixinguinha.html": {
-        address: "Via Binário Porto, 778, Santo Cristo. Rio de Janeiro - RJ",
-        coords: "-22.8972192,-43.2047220",
+        address: "R. Gen. Luís Mendes de Morais - Santo Cristo, Rio de Janeiro - RJ, 20220-260",
+        coords: "-22.902665370534308,-43.20775344102183",
         youtube: "ju5qxUvgewU"
     },
     "the-pier-residencial.html": {
         address: "Acesso Público, 226, Centro. Niterói - RJ",
-        coords: "-22.889159,-43.125342",
+        coords: "-22.889125014595464,-43.125407076686976",
         youtube: "Px5oHSzfU5E"
     },
     "vargas-1140.html": {
         address: "Avenida Presidente Vargas, 1140, Centro. Rio de Janeiro - RJ",
-        coords: "-22.903321,-43.186492",
+        coords: "-22.903174766612906,-43.18643608236824",
         youtube: "L1RbZZR1B68"
+    },
+
+    "pura-artefacto.html": {
+        address: "R. Escritor Rodrigo Melo Franco, 830 - Barra da Tijuca, Rio de Janeiro - RJ, 22783-124",
+        coords: "-22.98739201921349, -43.41762403899274",
+        youtube: "3aNJrCdjj1E"
+    },
+
+    "oro.html": {
+        address: "R. Escritor Rodrigo Melo Franco, 1020 - Barra da Tijuca, Rio de Janeiro - RJ, 22783-124",
+        coords: "-22.988433558194007, -43.41886467116488",
+        youtube: "8KHBMhFtDb8"
     }
+
 };
 
 if (propertyDetailHero) {
@@ -152,16 +172,51 @@ const getAmenityClass = (text) => {
     const normalized = text.toLowerCase();
 
     if (normalized.includes("pisc")) return "amenity-pool";
-    if (normalized.includes("academ") || normalized.includes("fitness")) return "amenity-gym";
-    if (normalized.includes("pet")) return "amenity-pet";
+    if (normalized.includes("academ") || normalized.includes("fitness") || normalized.includes("pilates") || normalized.includes("crossfit")) return "amenity-gym";
+    if (normalized.includes("pet") || normalized.includes("animal") || normalized.includes("cão")|| normalized.includes("pet care")) return "amenity-paw-print";
     if (normalized.includes("festa") || normalized.includes("gourmet") || normalized.includes("churrasqueira")) return "amenity-party";
-    if (normalized.includes("office") || normalized.includes("cowork") || normalized.includes("lavanderia") || normalized.includes("market") || normalized.includes("oficina")) return "amenity-office";
+    if (normalized.includes("office") || normalized.includes("market") || normalized.includes("oficina")|| normalized.includes("rooftop")) return "amenity-office";
+    if (normalized.includes("cowork")) return "amenity-laptop";
     if (normalized.includes("quadra") || normalized.includes("beach")) return "amenity-court";
-    if (normalized.includes("play") || normalized.includes("brinquedoteca") || normalized.includes("baby")) return "amenity-baby";
+    if (normalized.includes("play") || normalized.includes("baby")) return "amenity-baby";
+    if (normalized.includes("valorização")) return "amenity-circle-dollar-sign";
+    if (normalized.includes("parque") || normalized.includes("praça")) return "amenity-shrub";
+    if (normalized.includes("colégio") || normalized.includes("escola") || normalized.includes("educação")) return "amenity-school";
+    if ((normalized.includes("localização") || normalized.includes("barra olímpica") || normalized.includes("centro rio") || normalized.includes("recreio dos bandeirantes") || normalized.includes("barra da tijuca") || normalized.includes("próximo") || normalized.includes("jacarepaguá") || normalized.includes("irajá") || normalized.includes("olaria") || normalized.includes("centro do rio") || normalized.includes("porto maravilha") || normalized.includes("são cristóvão") || normalized.includes("niterói")) && !normalized.includes("trem") && !normalized.includes("metrô")) return "amenity-map-pin";    if (normalized.includes("praia")) return "amenity-parasol";
+    if (normalized.includes("vista")) return "amenity-mountain";
+    if (normalized.includes("metrô") || normalized.includes("trem")) return "amenity-train-front";
+    if (normalized.includes("rodoviária") || normalized.includes("ônibus")) return "amenity-bus";
+    if (normalized.includes("podcast") || normalized.includes("microfone") || normalized.includes("estúdio de música")) return "amenity-mic";
+    if (normalized.includes("quarto") || normalized.includes("suíte") || normalized.includes("dormitório")) return "amenity-bed";
+    if (normalized.includes("m²") || normalized.includes("metros") || normalized.includes("área") || normalized.includes("tamanho")) return "amenity-ruler";
+    if (normalized.includes("alto padrão") || normalized.includes("luxo") || normalized.includes("premium") || normalized.includes("exclusivo")) return "amenity-gem";
+    if (normalized.includes("mercado")) return "amenity-shopping-basket";
+    if (normalized.includes("baverage bar") || normalized.includes("drink")) return "amenity-martini";
+    if (normalized.includes("home ateliê") || normalized.includes("artes")) return "amenity-palette";
+    if (normalized.includes("home theater") || normalized.includes("cinema")) return "amenity-popcorn";
+    if (normalized.includes("gamer") || normalized.includes("jogos")) return "amenity-gamepad";
+    if (normalized.includes("móveis")) return "amenity-armchair";
+    if (normalized.includes("bicicleta") || normalized.includes("bicicletário")) return "amenity-bike";
+    if (normalized.includes("lev")) return "amenity-zap";
+    if (normalized.includes("vias")|| normalized.includes("acesso")) return "amenity-road";
+    if (normalized.includes("laundry")|| normalized.includes("lavanderia")) return "amenity-washing-machine";
+    if (normalized.includes("portaria")) return "amenity-door-closed-locked";
+    if (normalized.includes("brinquedoteca")) return "amenity-toy-brick";
+    if (normalized.includes("sauna")) return "amenity-sauna";
+    if (normalized.includes("sol")) return "amenity-sun";
+    if (normalized.includes("futmesa")|| normalized.includes("estádio") || normalized.includes("maracanã")) return "amenity-volleyball";
+    if (normalized.includes("samba")) return "amenity-drum";
+    if (normalized.includes("sport")) return "amenity-whistle";
+    if (normalized.includes("shopping")) return "amenity-shopping-bag";
+    if (normalized.includes("relax")) return "amenity-leaf"
+    if (normalized.includes("garden")) return "amenity-house"
+    if (normalized.includes("horta")) return "amenity-salad";
+    if (normalized.includes("museu")) return "amenity-landmark";
+    if (normalized.includes("hospital")) return "amenity-hospital";
+    if (normalized.includes("beleza")) return "amenity-sparkles";
+    
 
-    return "amenity-office";
-};
-
+}
 const getLocationFromDescription = (description) => {
     if (description.includes("Porto Maravilha")) return "Porto Maravilha, Rio de Janeiro - RJ";
     if (description.includes("Niterói")) return "Niterói - RJ";
@@ -290,7 +345,7 @@ if (propertyDetailHero && !document.querySelector(".property-section-nav")) {
         <div class="overview-layout">
             <div class="overview-copy">
                 <p>${description}</p>
-                <p>Fale com a Adriana para receber orientação personalizada, tirar dúvidas e simular as melhores condições para o seu perfil.</p>
+                <p>Agende sua visita com a Adriana para conhecer de perto esta experiência.</p>
             </div>
             <aside class="${contactCardClass}">
                 ${propertyVideoMarkup}
@@ -302,13 +357,14 @@ if (propertyDetailHero && !document.querySelector(".property-section-nav")) {
 
     const amenitiesSection = Array.from(document.querySelectorAll(".detail-section")).find((section) => section.querySelector(".amenities-grid"));
 
-    if (amenitiesSection) {
+  if (amenitiesSection) {
+        
         const amenityTexts = Array.from(amenitiesSection.querySelectorAll(".amenities-grid article"))
             .map((item) => item.textContent.trim())
-            .filter((text) => text && !/^\d|m²|quarto|Studio|Zona|Centro|Região|Foco|Av\.|Rua|Perto da|Próximo|Fácil|Vista|Localização|Modernidade|Excelente|Apartamentos/i.test(text))
-            .slice(0, 7);
+            .slice(0, 20);
 
-        const items = (amenityTexts.length ? amenityTexts : Array.from(amenitiesSection.querySelectorAll(".amenities-grid article")).map((item) => item.textContent.trim()).slice(0, 7))
+        // Gera o HTML final para cada item
+        const items = amenityTexts
             .map((text) => `<span class="amenity-list-item ${getAmenityClass(text)}">${text}</span>`)
             .join("");
 
